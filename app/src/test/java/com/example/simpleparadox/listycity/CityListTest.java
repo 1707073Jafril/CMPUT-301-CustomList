@@ -61,8 +61,8 @@ class CityListTest {
     void testDeleteCity(){
         CityList cityList = new CityList();
 
-        City city1 = new City("Sathkhira", "Khulna");
-        City city2 = new City("Bogura", "Rajshahi");
+        City city1 = new City("Comilla", "Chittagong");
+        City city2 = new City("Dhaka", "Dhaka");
         cityList.add(city1);
         cityList.add(city2);
 
@@ -76,7 +76,7 @@ class CityListTest {
     @Test
     void CountCities(){
         CityList _cityList = mockCityList();
-        City city1 = new City("Sathkhira", "Khulna");
+        City city1 = new City("Comilla", "Chittagong");
         _cityList.add(city1);
 
         assertEquals(2,_cityList.countCities());
