@@ -21,36 +21,26 @@ public class CityList {
         }
         cities.add(city);
     }
-    public boolean hasCity(City city) {
-        for (City c : cities) {
-            if (c.getCityName().equals(city.getCityName()) &&
-                    c.getProvinceName().equals(city.getProvinceName())) {
-                return true;
-            }
-        }
 
-        return false;
-    }
-    public void delete(City city) {
-        if (!hasCity(city)) {
-            throw new IllegalArgumentException();
-        }
 
-        for (City c : cities) {
-            if (c.compareTo(city) == 0){
-                cities.remove(c);
-                break;
-            }
-        }
+    /**
+     * This delete a city from the list
+     * @param _city
+     */
+    public void deleteCity(City _city){
+        cities.remove(_city);
     }
 
-    /* Return the size of the city list
-     * @return
-             *      Size of city list
+
+    /**
+     * This count cities
      */
     public int countCities() {
         return cities.size();
     }
+
+
+
     /**
      * This returns a sorted list of cities
      * @return

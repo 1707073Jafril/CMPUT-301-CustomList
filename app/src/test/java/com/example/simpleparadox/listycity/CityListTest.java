@@ -41,27 +41,7 @@ class CityListTest {
             cityList.add(city);
         });
     }
-    @Test
-    void testDeleteCity() {
-        CityList cityList = mockCityList();
 
-        City city = new City("Victoria", "British Columbia");
-        cityList.add(city);
-
-        assertEquals(2, cityList.countCities());
-
-        cityList.delete(mockCity());
-
-        assertEquals(1, cityList.countCities());
-        assertEquals(0, city.compareTo(cityList.getCities().get(0)));
-    }
-
-    @Test
-    void testCountCities() {
-        CityList cityList = mockCityList();
-
-        assertEquals(1, cityList.countCities());
-    }
     @Test
     void testGetCities() {
         CityList cityList = mockCityList();
@@ -73,6 +53,33 @@ class CityListTest {
 
         assertEquals(0, city.compareTo(cityList.getCities().get(0)));
         assertEquals(0, mockCity().compareTo(cityList.getCities().get(1)));
+    }
+
+
+
+    @Test
+    void testDeleteCity(){
+        CityList cityList = new CityList();
+
+        City city1 = new City("Sathkhira", "Khulna");
+        City city2 = new City("Bogura", "Rajshahi");
+        cityList.add(city1);
+        cityList.add(city2);
+
+        assertEquals(2, cityList.countCities());
+
+        cityList.deleteCity(city1);
+
+        assertEquals(1, cityList.countCities());
+    }
+
+    @Test
+    void CountCities(){
+        CityList _cityList = mockCityList();
+        City city1 = new City("Sathkhira", "Khulna");
+        _cityList.add(city1);
+
+        assertEquals(2,_cityList.countCities());
     }
 
 }
